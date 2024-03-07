@@ -1,0 +1,28 @@
+// <!-- 02 BANNER -->
+.banner {
+    margin-top: 100px;
+    background: 
+    url("/img/oriento-S_ncR5Q41PI-unsplash.jpg") fixed bottom left / cover;
+    height: 100vh;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    color: #d5450b;
+    letter-spacing: .75rem;
+    h2 {
+        font: $font-weight-regular clamp(2rem, pxToVw(42), 4rem) "Noto Sans TC";
+        margin-bottom: .05rem;
+    }
+    h1 {
+        font: $font-weight-bold clamp(3.1rem, pxToVw(80), 6rem) "Noto Sans TC";
+    }
+}
+
+.banner {
+    @media screen and (max-width: 768px) {
+        letter-spacing: 0;
+        padding-right: 1rem;
+    }
+}

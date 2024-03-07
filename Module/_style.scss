@@ -1,0 +1,251 @@
+// <!-- 03 INTRO -->
+
+.intro, .customer {
+    background-color: #ffd2cf;
+}
+
+//TITLE
+.container {
+    .title {
+        h2 {
+            font-size: $h2-font-size;
+            text-align: center;
+            display: flex;
+            margin-bottom: 3rem;
+            color: #9e1805;
+        }
+        h2::before, h2::after {
+            content: "";
+            flex: 1;
+            width: 0;
+            height: 3px;
+            background-color: currentColor;
+            margin: auto 1rem;
+        }
+    }
+}
+
+//PARAGRAPH
+.container .txt {
+    padding: 0 2.5rem;
+    text-indent: 2rem;
+    font-size: $h5-font-size;
+    line-height: $line-height-base;
+    letter-spacing: 1px;
+    p:nth-child(2) {
+        padding-top: 2rem;
+    }
+}
+
+
+// <!-- 04 PRODUCT -->
+.product {
+    .product-all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+        .product-item {
+            margin: .5rem;
+            font-size: $h1-font-size;
+            a {
+                color: #fff;
+                float: inline-end;
+                margin: 1rem 1rem 0 0;
+                transition: .2s;
+                position: relative;
+            }
+            a::before {
+                content: "";
+                position: absolute;
+                border-bottom: 3px solid currentColor;
+
+                top: 0;
+                bottom: -5px;
+                left: 50%;
+                right: 50%;
+                transition: .2s;
+            }
+            a:hover::before  {
+                left: 0;
+                right: 0;
+            }
+            a:hover {
+                transform: translateY(-3px);
+            }
+        }
+        .product-item:first-child {
+            width: 400px;
+            height: 400px;
+            background: url("/img/peter-herrmann-cjN_hKZq1Co-unsplash.jpg") center right / cover;
+        }
+        .product-item:last-child {
+            width: 400px;
+            height: 400px;
+            background: url("/img/khloe-arledge-K712zHuGmW4-unsplash.jpg") center left / cover;
+        }
+    }
+}
+
+// <!-- 05 CUSTOMER -->
+//點取的圖片會保留，其他圖片fade out
+.customer {
+    .customer-all {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 3rem;
+        .customer-item {
+            width: 270px;
+            margin: 1rem;
+            position: relative;
+        }
+        .customer-item::before, 
+        .customer-item::after {
+            content: "";
+            position: absolute;
+            background-color: #ffd2cf;
+            width: 50%;
+            height: 0%;
+            transition: .5s;
+        }
+        .customer-item::before {
+            top: 0;
+            left: 0;
+        }
+        .customer-item::after {
+            bottom: 0;
+            right: 0;
+        }
+    }
+    //hover到此塊區域，所有區塊都會fadeout
+    .customer-all:hover .customer-item::before,
+    .customer-all:hover .customer-item::after {
+        height: 100%;
+    }
+    //hover到的某個項目則不會fadeout
+    .customer-all .customer-item:hover::before, 
+    .customer-all .customer-item:hover::after {
+        height: 0;
+    }
+
+}
+
+
+// <!-- 06 CONTACT -->
+.contact {
+    form {
+        padding: 1rem 4rem;
+        display: flex;
+        flex-direction: column;
+        font-size: $h5-font-size;
+        line-height: $line-height-base;
+        letter-spacing: 1px;
+        label {
+            display: flex;
+            flex-direction: column;
+            margin: .5rem 0;
+            input {
+                line-height: 3;
+                padding: 0 1rem;
+            }
+            input[type="button"] {
+                align-self: center;
+                background-color: #d5450b;
+                color: #fff;
+                font-size: $h5-font-size;
+                border: none;
+                padding: 0rem 5rem;
+                margin-top: 2rem;
+                cursor: pointer;
+            }
+        }
+        label[for="privacy"] {
+            flex-direction: row;
+            justify-content: flex-start;
+            input[type="checkbox"] {
+                margin-right: 1rem;
+            }
+        }
+        label[for="comment"] {
+            input[type="text"] {
+                height: 10rem;
+            }
+        }
+    }
+}
+
+
+// <!-- 07 FOOTER -->
+.footer {
+    background-color: #d5450b;
+    color: #fff;
+    padding: 5rem 2rem 1rem;
+    .social-media {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid currentColor;
+        padding-bottom: 2rem;
+        margin-bottom: 3rem;
+        .company {
+            display: flex;
+            flex-direction: column;
+            a {
+                color: currentColor;
+                padding: 1rem 0;
+                font-size: $h4-font-size;
+            }
+        }
+        .social-media-icons {
+            a {
+                color: currentColor;
+                font-size: $h3-font-size;
+                padding: 0 1rem;
+            }
+        }
+    }
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: currentColor;
+        font-size: $h5-font-size;
+        .copyright-terms {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            a {
+                color: currentColor;
+                padding: .5rem;
+            }
+        }
+    }
+}
+
+.footer {
+    @media screen and (max-width: 576px) {
+        .social-media {
+            flex-direction: column;
+            .company {
+                margin-bottom: 1rem;
+                a {
+                    font-size: 28px;
+                }
+            }
+        }
+        .social-media-icons {
+            align-self: flex-end;
+        }
+        .copyright {
+            p {
+                font-size: $h6-font-size;
+            }
+            .copyright-terms a {
+                font-size: $h6-font-size;
+            }
+        }
+    }
+}
