@@ -174,7 +174,7 @@ a {
 
 .banner {
   margin-top: 100px;
-  background: url("/img/oriento-S_ncR5Q41PI-unsplash.jpg") fixed bottom left/cover;
+  background: url("https://github.com/yellowchen/Work-03/blob/master/img/oriento-S_ncR5Q41PI-unsplash.jpg?raw=true") fixed bottom left/cover;
   height: 100vh;
   padding-right: 4rem;
   display: flex;
@@ -268,12 +268,12 @@ a {
 .product .product-all .product-item:first-child {
   width: 400px;
   height: 400px;
-  background: url("/img/peter-herrmann-cjN_hKZq1Co-unsplash.jpg") center right/cover;
+  background: url("https://github.com/yellowchen/Work-03/blob/master/img/peter-herrmann-cjN_hKZq1Co-unsplash.jpg?raw=true") center right/cover;
 }
 .product .product-all .product-item:last-child {
   width: 400px;
   height: 400px;
-  background: url("/img/khloe-arledge-K712zHuGmW4-unsplash.jpg") center left/cover;
+  background: url("https://github.com/yellowchen/Work-03/blob/master/img/khloe-arledge-K712zHuGmW4-unsplash.jpg?raw=true") center left/cover;
 }
 
 .customer .customer-all {
